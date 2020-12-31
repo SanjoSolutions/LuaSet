@@ -14,6 +14,14 @@ local function copy(set)
     return setCopy
 end
 
+local function toList(set)
+    local list = {}
+    for value, _ in pairs(set) do
+        table.insert(list, value)
+    end
+    return list
+end
+
 local function size(set)
     local keys = Object.keys(set)
     return #keys
@@ -47,6 +55,7 @@ end
 Set = {
     create = create,
     copy = copy,
+    toList = toList,
     size = size,
     contains = contains,
     intersect = intersect
