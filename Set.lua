@@ -14,6 +14,10 @@ local function copy(set)
     return setCopy
 end
 
+local function iterator(set)
+    return pairs(set)
+end
+
 local function toList(set)
     local list = {}
     for value, _ in pairs(set) do
@@ -61,6 +65,7 @@ end
 Set = {
     create = create,
     copy = copy,
+    iterator = iterator
     toList = toList,
     size = size,
     equals = equals,
