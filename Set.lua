@@ -65,7 +65,7 @@ end
 Set = {
     create = create,
     copy = copy,
-    iterator = iterator
+    iterator = iterator,
     toList = toList,
     size = size,
     equals = equals,
