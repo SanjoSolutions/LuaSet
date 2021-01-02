@@ -1,4 +1,3 @@
-# Lua Array
+# Lua Set
 
 This work is devoted to God.
-
