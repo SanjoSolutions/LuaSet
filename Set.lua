@@ -27,6 +27,12 @@ local function size(set)
     return #keys
 end
 
+local function equals(setA, setB)
+    local setASize = size(setA)
+    local setBSize = size(setB)
+    return setASize == setBSize and Set.intersect(setA, setB) == setASize
+end
+
 local function contains(set, value)
     return set[value] == true
 end
@@ -57,6 +63,7 @@ Set = {
     copy = copy,
     toList = toList,
     size = size,
+    equals = equals,
     contains = contains,
     intersect = intersect
 }
