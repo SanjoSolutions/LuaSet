@@ -1,7 +1,9 @@
 local function create(list)
     local set = {}
-    for _, item in ipairs(list) do
-        set[item] = true
+    if list then
+        for _, item in ipairs(list) do
+            set[item] = true
+        end
     end
     return set
 end
@@ -70,5 +72,5 @@ Set = {
     size = size,
     contains = contains,
     intersect = intersect,
-    equals = equals
+    equals = equals,
 }
