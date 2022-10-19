@@ -29,7 +29,7 @@ local function toList(set)
 end
 
 local function size(set)
-    local keys = Object.keys(set)
+    local keys = Object2.keys(set)
     return #keys
 end
 
