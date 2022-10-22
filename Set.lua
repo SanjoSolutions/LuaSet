@@ -64,6 +64,10 @@ local function equals(setA, setB)
     return setASize == setBSize and Set.size(intersect(setA, setB)) == setASize
 end
 
+local function union(...)
+    return Object.assign({}, ...)
+end
+
 Set = {
     create = create,
     copy = copy,
@@ -73,4 +77,5 @@ Set = {
     contains = contains,
     intersect = intersect,
     equals = equals,
+    union = union
 }
