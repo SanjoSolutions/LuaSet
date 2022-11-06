@@ -1,5 +1,5 @@
 ## Title: Set
-## Interface: 100000
+## Interface: 30400
 ## Dependencies: Object
 
 Set.lua
