@@ -77,6 +77,10 @@ local function union(...)
   return Object.assign({}, ...)
 end
 
+local function add(set, element)
+  set[element] = true
+end
+
 Set = {
   create = create,
   copy = copy,
@@ -87,5 +91,12 @@ Set = {
   containsWhichFulfillsCondition = containsWhichFulfillsCondition,
   intersect = intersect,
   equals = equals,
-  union = union
+  union = union,
+  add = add
 }
+
+function Set:new(list)
+  local set = Set.create(list)
+  setmetatable(set, {__index = Set})
+  return set
+end
