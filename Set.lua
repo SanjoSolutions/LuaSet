@@ -1,5 +1,6 @@
 local function create(list)
   local set = {}
+  setmetatable(set, {__index = Set})
   if list then
     for _, item in ipairs(list) do
       set[item] = true
@@ -96,7 +97,5 @@ Set = {
 }
 
 function Set:new(list)
-  local set = Set.create(list)
-  setmetatable(set, {__index = Set})
-  return set
+  return Set.create(list)
 end
