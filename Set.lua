@@ -1,9 +1,13 @@
+local function add(set, element)
+  set[element] = true
+end
+
 local function create(list)
   local set = {}
   setmetatable(set, {__index = Set})
   if list then
     for _, item in ipairs(list) do
-      set[item] = true
+      add(set, item)
     end
   end
   return set
@@ -47,6 +51,10 @@ local function containsWhichFulfillsCondition(set, condition)
   return false
 end
 
+local function remove(set, element)
+  set[element] = nil
+end
+
 local function intersect(...)
   local sets = { ... }
   local set
@@ -57,7 +65,7 @@ local function intersect(...)
       local setB = sets[index]
       for key, _ in pairs(set) do
         if set[key] and not setB[key] then
-          set[key] = nil
+          remove(set, key)
         end
       end
     end
@@ -78,8 +86,8 @@ local function union(...)
   return Object.assign({}, ...)
 end
 
-local function add(set, element)
-  set[element] = true
+local function isEmpty(set)
+  return not next(set)
 end
 
 Set = {
@@ -93,7 +101,9 @@ Set = {
   intersect = intersect,
   equals = equals,
   union = union,
-  add = add
+  add = add,
+  remove = remove,
+  isEmpty = isEmpty
 }
 
 function Set:new(list)
