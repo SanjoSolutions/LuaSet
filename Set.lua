@@ -86,8 +86,12 @@ local function union(...)
   return Object.assign({}, ...)
 end
 
+local function hasElements(set)
+  return Boolean.toBoolean(next(set))
+end
+
 local function isEmpty(set)
-  return not next(set)
+  return not hasElements(set)
 end
 
 Set = {
@@ -103,7 +107,8 @@ Set = {
   union = union,
   add = add,
   remove = remove,
-  isEmpty = isEmpty
+  hasElements = hasElements,
+  isEmpty = isEmpty,
 }
 
 function Set:new(list)
