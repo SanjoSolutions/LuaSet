@@ -1,6 +1,5 @@
 ## Title: Set
 ## Interface: 30400
 ## Dependencies: Object, Boolean
-## Version: 1.0.0
 
-Set.xml
+Set.lua
