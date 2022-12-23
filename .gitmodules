@@ -1,0 +1,9 @@
+[submodule "libs/Library"]
+	path = libs/Library
+	url = https://github.com/SanjoSolutions/Library.git
+[submodule "libs/Boolean"]
+	path = libs/Boolean
+	url = https://github.com/SanjoSolutions/LuaBoolean.git
+[submodule "libs/Object"]
+	path = libs/Object
+	url = https://github.com/SanjoSolutions/LuaObject.git
