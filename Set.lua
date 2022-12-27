@@ -1,49 +1,55 @@
-local function add(set, element)
-  set[element] = true
+Set = {}
+
+function Set:new(list)
+  return Set.create(list)
 end
 
-local function create(list)
+function Set.create(list)
   local set = {}
   setmetatable(set, {__index = Set})
   if list then
     for _, item in ipairs(list) do
-      add(set, item)
+      Set.add(set, item)
     end
   end
   return set
 end
 
-local function copy(set)
+function Set:add(element)
+  self[element] = true
+end
+
+function Set:copy()
   local setCopy = {}
-  for key, value in pairs(set) do
+  for key, value in pairs(self) do
     setCopy[key] = value
   end
   return setCopy
 end
 
-local function iterator(set)
-  return pairs(set)
+function Set:iterator()
+  return pairs(self)
 end
 
-local function toList(set)
+function Set:toList()
   local list = {}
-  for value, _ in pairs(set) do
+  for value, _ in pairs(self) do
     table.insert(list, value)
   end
   return list
 end
 
-local function size(set)
-  local keys = Object2.keys(set)
+function Set:size()
+  local keys = Object2.keys(self)
   return #keys
 end
 
-local function contains(set, value)
-  return set[value] == true
+function Set:contains(value)
+  return self[value] == true
 end
 
-local function containsWhichFulfillsCondition(set, condition)
-  for element in Set.iterator(set) do
+function Set:containsWhichFulfillsCondition(condition)
+  for element in Set.iterator(self) do
     if condition(element) then
       return true
     end
@@ -51,21 +57,21 @@ local function containsWhichFulfillsCondition(set, condition)
   return false
 end
 
-local function remove(set, element)
-  set[element] = nil
+function Set:remove(element)
+  self[element] = nil
 end
 
-local function intersect(...)
-  local sets = { ... }
+function Set:intersect(...)
+  local sets = { self, ... }
   local set
 
   if #sets >= 1 then
-    set = copy(sets[1])
+    set = Set.copy(sets[1])
     for index = 2, #sets do
       local setB = sets[index]
       for key, _ in pairs(set) do
         if set[key] and not setB[key] then
-          remove(set, key)
+          Set.remove(set, key)
         end
       end
     end
@@ -76,41 +82,21 @@ local function intersect(...)
   return set
 end
 
-local function equals(setA, setB)
-  local setASize = size(setA)
-  local setBSize = size(setB)
-  return setASize == setBSize and Set.size(intersect(setA, setB)) == setASize
+function Set:equals(setB)
+  local setASize = Set.size(self)
+  local setBSize = Set.size(setB)
+  return setASize == setBSize and Set.size(Set.intersect(self, setB)) == setASize
 end
 
-local function union(...)
-  return Object.assign({}, ...)
+function Set:union(...)
+  -- FIXME: Return Set
+  return Object.assign({}, self, ...)
 end
 
-local function hasElements(set)
-  return Boolean.toBoolean(next(set))
+function Set:hasElements()
+  return Boolean.toBoolean(next(self))
 end
 
-local function isEmpty(set)
-  return not hasElements(set)
-end
-
-Set = {
-  create = create,
-  copy = copy,
-  iterator = iterator,
-  toList = toList,
-  size = size,
-  contains = contains,
-  containsWhichFulfillsCondition = containsWhichFulfillsCondition,
-  intersect = intersect,
-  equals = equals,
-  union = union,
-  add = add,
-  remove = remove,
-  hasElements = hasElements,
-  isEmpty = isEmpty,
-}
-
-function Set:new(list)
-  return Set.create(list)
+function Set:isEmpty()
+  return not Set.hasElements(self)
 end
