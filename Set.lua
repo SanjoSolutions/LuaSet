@@ -89,8 +89,13 @@ function Set:equals(setB)
 end
 
 function Set:union(...)
-  -- FIXME: Return Set
-  return Object.assign({}, self, ...)
+  local set = Set.create()
+  for __, set2 in ipairs({self, ...}) do
+    for element in Set.iterator(set2) do
+      set:add(element)
+    end
+  end
+  return set
 end
 
 function Set:hasElements()
