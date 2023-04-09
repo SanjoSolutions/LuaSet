@@ -1,5 +1,5 @@
 ## Title: Set
-## Interface: 100100
+## Interface: 100007
 ## Dependencies: Object, Boolean
 
 Set.lua
