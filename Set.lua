@@ -2,6 +2,17 @@ local addOnName = 'Set'
 local version = '1.0.0'
 
 if (_G.Library and not Library.isRegistered(addOnName, version)) or not _G.Library then
+  local Object
+  local Boolean
+
+  if _G.Library then
+    Object = Library.retrieve('Object', '^1.0.0')
+    Boolean = Library.retrieve('Boolean', '^1.0.0')
+  else
+    Object = _G.Object
+    Boolean = _G.Boolean
+  end
+
   --- @class Set
   local Set = {}
 

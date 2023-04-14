@@ -1,7 +1,6 @@
 ## Title: Set
 ## Interface: 11403
-## Dependencies: Object, Boolean
 ## Version: 1.0.0
-## OptionalDeps: Library
+## OptionalDeps: Library, Object, Boolean
 
 Set.lua
