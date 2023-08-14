@@ -1,6 +1,6 @@
 ## Title: Set
 ## Interface: 100105
-## Version: 1.0.0
+## Version: 1.1.0
 ## OptionalDeps: Library, Object, Boolean
 
 Set.xml

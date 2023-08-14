@@ -1,8 +1,8 @@
 {
-  "name": "Set",
+  "name": "@sanjo-addons/set",
   "dependencies": {
-    "Library": "SanjoSolutions/LuaLibrary#v0.4.0",
-    "Object": "SanjoSolutions/LuaObject#v1.0.0",
-    "Boolean": "SanjoSolutions/LuaBoolean#v1.0.0"
+    "@sanjo-addons/library": "SanjoSolutions/LuaLibrary#v0.4.0",
+    "@sanjo-addons/object": "SanjoSolutions/LuaObject#v1.0.0",
+    "@sanjo-addons/boolean": "SanjoSolutions/LuaBoolean#v1.0.0"
   }
 }
