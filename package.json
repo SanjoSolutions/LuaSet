@@ -1,7 +1,7 @@
 {
   "name": "Set",
   "dependencies": {
-    "Library": "SanjoSolutions/LuaLibrary#v1.1.0",
+    "Library": "SanjoSolutions/LuaLibrary#v0.4.0",
     "Object": "SanjoSolutions/LuaObject#v1.1.0",
     "Boolean": "SanjoSolutions/LuaBoolean#v1.1.0"
   }
