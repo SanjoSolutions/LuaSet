@@ -1,5 +1,5 @@
 local addOnName = 'Set'
-local version = '1.1.0'
+local version = '1.1.1'
 
 if (_G.Library and not Library.isRegistered(addOnName, version)) or not _G.Library then
   local Object

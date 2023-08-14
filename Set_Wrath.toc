@@ -1,6 +1,6 @@
 ## Title: Set
 ## Interface: 30400
-## Version: 1.1.0
+## Version: 1.1.1
 ## OptionalDeps: Library, Object, Boolean
 
 Set.xml
