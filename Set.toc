@@ -1,5 +1,5 @@
 ## Title: Set
-## Interface: 100007
+## Interface: 100105
 ## Version: 1.0.0
 ## OptionalDeps: Library, Object, Boolean
 
