@@ -1,8 +1,12 @@
 {
   "name": "@sanjo-addons/set",
+  "version": "1.1.0",
   "dependencies": {
-    "@sanjo-addons/library": "SanjoSolutions/LuaLibrary#v0.4.0",
-    "@sanjo-addons/object": "SanjoSolutions/LuaObject#v1.0.0",
-    "@sanjo-addons/boolean": "SanjoSolutions/LuaBoolean#v1.0.0"
+    "@sanjo-addons/library": "^0.5.0",
+    "@sanjo-addons/object": "^1.0.0",
+    "@sanjo-addons/boolean": "^1.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
