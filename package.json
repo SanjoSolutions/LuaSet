@@ -1,6 +1,6 @@
 {
   "name": "@sanjo-addons/set",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "dependencies": {
     "@sanjo-addons/library": "^0.5.0",
     "@sanjo-addons/object": "^1.0.0",
